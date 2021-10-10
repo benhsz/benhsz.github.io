@@ -1,0 +1,157 @@
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content="A blogging website.">
+<link rel="shortcut icon" href=https://benhsz.github.io/favicon.ico>
+<link rel=stylesheet href=/css/style.min.css>
+<title>The Struggle with Prefix Syntax</title>
+</head>
+<body><header id=banner>
+<h2><a href=https://benhsz.github.io>Ben's Blog</a></h2>
+<nav>
+<ul>
+<li>
+<a href=/posts title=posts>posts</a>
+</li><li>
+<a href=/about title=about>about</a>
+</li>
+</ul>
+</nav>
+</header>
+<main id=content>
+<article>
+<header id=post-header>
+<h1>The Struggle with Prefix Syntax</h1>
+<div>
+<time>October 10, 2021</time>
+</div>
+</header><p>If you&rsquo;re programming in a Lisp-family programming language, working with
+numbers is going to be a little bit different.</p>
+<p>Some might say that, while it may seem odd at first, you can get used to it.<br>
+That is to say, it&rsquo;s not bad. Just&mldr; different.</p>
+<p>Prefix means that where you would normally have the operator between operands,
+you would have only one operator at the very beginning.</p>
+<p>In my experience, this is fine for when you need to add or multiply. For some reason that isn&rsquo;t
+confusing at all; it really is just nothing more than <em>different.</em></p>
+<p>But for other things like greater-than, less-than, minus, it&rsquo;s not so simple.
+When I started out programming in Lisp, I thought prefix syntax seemed to present only a minor difficulty. But now that some time has passed, I&rsquo;ve given some thought to my experience with it.</p>
+<p>And it&rsquo;s actually mind-boggling how confusing it is.</p>
+<p>For example.</p>
+<p><code>(- 3 2)</code></p>
+<p>I would read this as &ldquo;minus three two&rdquo;.</p>
+<p>Hang on. Let me try to read that again.</p>
+<p><code>(- 3 2)</code></p>
+<p>Minus&mldr; three&mldr; two.</p>
+<p>But wait. <em>What</em> minus three? And then there&rsquo;s that two&mldr;</p>
+<p>So is it two minus three?</p>
+<p>Nope.</p>
+<h3 id=minus-three-two--three-minus-two>Minus Three Two = Three Minus Two</h3>
+<p><img src=https://i.imgur.com/zeJrmc8.gif alt="Huh gif"></p>
+<p>I now realize it&rsquo;s almost impossible to get used to because, when reading the code from left to right (as code is usually read) it
+partially reads like infix notation. So it&rsquo;s not that it&rsquo;s different. It&rsquo;s that it&rsquo;s not different <em>enough</em>.</p>
+<p>There is a way to avoid the confusion though. But we need to read it step-by-step.
+First the operator, then the operands:</p>
+<p><code>-</code></p>
+<p>&ldquo;Minus.&rdquo; (Hyphen, actually. But we&rsquo;re just gonna have to roll with it.)</p>
+<p>This means we&rsquo;re dealing with subtraction, so let&rsquo;s see what comes after that.</p>
+<p><code>3 2</code></p>
+<p>&ldquo;Three two.&rdquo;</p>
+<p>Now imagine the operator between the numbers.</p>
+<p>&ldquo;Three minus two.&rdquo;</p>
+<p>There we go.</p>
+<p>And if you have more numbers, like</p>
+<p><code>(- 9 3 2)</code></p>
+<p>It should be read as &ldquo;minus&rdquo;&mldr; &ldquo;nine minus three minus two.&rdquo;</p>
+<p>And you do this with other operators too, like</p>
+<p><code>(> X Y)</code></p>
+<p>This should not be read as &ldquo;greater than X Y&rdquo;, which can leave you wondering: <em>what</em> is greater than X? And what&rsquo;s
+that Y doing there?! Is Y greater than X?<br>
+No, no, no.</p>
+<p>Don&rsquo;t read it left to right in one go! Oh, sure, you can read all other code left to right in one go, but not this part.</p>
+<p>Just repeat the previous steps. &ldquo;Greater than&rdquo;, take a look what you&rsquo;ve got (X Y), and then&mldr; &ldquo;X greater than Y.&rdquo;</p>
+<p>See? That wasn&rsquo;t so bad.</p>
+<p>Well, actually, that was pretty bad.
+It may not seem like too much ask here, but that&rsquo;s because we&rsquo;re forgetting the context.
+A thing such as <code>(> X Y)</code> is problematic when it is involved in a train of thought. That is, when you&rsquo;re busy thinking about code.
+And that&rsquo;s practically always going to be the case.</p>
+<blockquote>
+<p>Let&rsquo;s see here. If X is greater than Y, then&mldr;</p>
+</blockquote>
+<p><code>(> X Y)</code></p>
+<blockquote>
+<p>Wait&mldr; greater than&mldr;</p>
+<p>Yeah. Okay. So&mldr;</p>
+<p>No, hang on. Greater than&mldr; X? Y. Wait, what?</p>
+</blockquote>
+<p>Train of thought: derailed.</p>
+<p>I know how prefix syntax is supposed to work at this point, so it&rsquo;s not difficult to start typing <code>(> X Y)</code>. But there is that small moment of second-guessing that happens when confronted with the sight of <code>> X Y</code>, and that moment is
+enough to screw me over.</p>
+<p>There&rsquo;s no getting used to it. Instead, you just get used to having your train of thought messed up once in a while; or catch a lucky break when you only have to add or multiply.</p>
+<p>There might be a way to solve this problem though.</p>
+<h1 id=infix-readings>Infix Readings</h1>
+<p>The idea I propose here doesn&rsquo;t involve changing the notation, but rather involves the editor, and
+what it can do to make prefix syntax easier to read.</p>
+<p>Before I explain further, have a gander at these examples.</p>
+<p>If you read this
+<code>- 3 2</code>
+as &ldquo;minus three two.&rdquo;</p>
+<p>Then the following would be read as <code> -3 2</code> &ldquo;minus three, two.&rdquo;</p>
+<p>And <code>-3 -2</code> as &ldquo;minus three, minus two.&rdquo;</p>
+<p>And <code>- 3 - 2</code> as &ldquo;minus three minus two.&rdquo;</p>
+<p>Then, perhaps, the following could be read as&mldr;?</p>
+<p><code>- ... 3 - 2</code></p>
+<p>&ldquo;Minus, three minus two.&rdquo;</p>
+<p><em>Bringo.</em><sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup></p>
+<p>Here&rsquo;s what I propose the editor should do:</p>
+<ol>
+<li>Visually separate the first operator from the rest</li>
+<li>Create more space between the operands by doing a bit of padding</li>
+<li>Fill the newly created space between the operands with the appropriate symbol&ndash;a ligature</li>
+</ol>
+<p>We could call this functionality &lsquo;Infix Readings&rsquo;, although I&rsquo;m not sure yet if that&rsquo;s the right term for it.</p>
+<p>Rather than pad the space between the operator and the first operand as above, a similar effect can be achieved by displaying some sort of barrier around the first operator, thereby &lsquo;detaching&rsquo; it from the operands, and having a ligature appear connected to the operands by being visually closer to the operands than the first operator.</p>
+<p>That sounds a bit complicated. But no worries, I made mockups in the form of animated GIFs, showing what it would look like.</p>
+<h1 id=mockups>Mockups</h1>
+<p>Here&rsquo;s a GIF showing (- 3 2).</p>
+<p><img src=/images/irgifs/3-2.gif alt="- 3 2 gif"></p>
+<p>Of course, if there&rsquo;s more operands, the editor will continue to fill the gaps with the appropriate symbol.</p>
+<p><img src=/images/irgifs/9-3-2.gif alt="- 9 3 2 gif"></p>
+<p>The programmer doesn&rsquo;t input those extra minuses you see in the above GIF. That&rsquo;s the editor&rsquo;s doing. They show up as soon as the programmer enters a space character.</p>
+<p>So rather than go out of your way to imagine the appropriate operator between the operands,
+the editor will just, like, <em>do it for you.</em></p>
+<p>And while we&rsquo;re using ligatures: another thing that has bothered me is the greater-than-or-equal-to operator <code>>=</code> which looks a bit incomprehensible to me.
+We can use something that looks a bit nicer instead.</p>
+<p><img src=/images/irgifs/6-4-7.gif alt="Greater-than-or-equal-to gif"></p>
+<p>Prefix syntax never gave me trouble when adding or multiplying, but here&rsquo;s what that would look like:</p>
+<p><img src=/images/irgifs/plusmultiply.gif alt="Plus and multiply gif"></p>
+<p>I suppose you could provide options in the editor as to which operators infix readings should act upon.</p>
+<p><img src=/images/irgifs/nested.gif alt="Nested expressions gif"></p>
+<p>Selecting the expressions would show that those extra operators aren&rsquo;t actually &lsquo;there&rsquo;, i.e. not entered by the programmer</p>
+<p><img src=/images/irgifs/selection.gif alt="Selection gif"></p>
+<p>Here&rsquo;s what it would look like if you toggled infix readings on and off. The programmer never inputs extra space
+between the operands; the editor just makes it seem that way.</p>
+<p><img src=/images/irgifs/toggle.gif alt="Toggle gif"></p>
+<p>Thus everything stays compatible with existing code.<br>
+(And also, when working with others who may not use infix readings, to prevent any
+confusion as to why the heck you keep putting two spaces in expressions when there should be only one!)</p>
+<p>Of course, we need to remember to do this in context, as before.
+That means we need to pretend like we&rsquo;re busy coding.</p>
+<p>So let&rsquo;s see, if X is greater than Y, then&mldr;</p>
+<p><img src=/images/irgifs/ifthen.gif alt="If then gif"></p>
+<p>Hopefully that would help us stay on track.</p>
+<p>P.S. At time of writing, work has not begun to implement this feature.</p>
+<p>Anyone interested in implementing, copying, or modifying this proposal is free to do so.</p>
+<section class=footnotes role=doc-endnotes>
+<hr>
+<ol>
+<li id=fn:1 role=doc-endnote>
+<p><a href="https://www.youtube.com/watch?v=4MpyHBoiTwk">https://www.youtube.com/watch?v=4MpyHBoiTwk</a>&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</article>
+</main><footer id=footer>
+Copyright © 2021 Ben Hosseinzahi
+</footer>
+</body>
+</html>
