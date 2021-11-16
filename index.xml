@@ -1,4 +1,133 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Not Without Purpose</title><link>https://benhsz.github.io/</link><description>Recent content on Not Without Purpose</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Wed, 13 Oct 2021 17:41:10 +0200</lastBuildDate><atom:link href="https://benhsz.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Making a Website in 2021</title><link>https://benhsz.github.io/making-a-website-in-2021/</link><pubDate>Wed, 13 Oct 2021 17:41:10 +0200</pubDate><guid>https://benhsz.github.io/making-a-website-in-2021/</guid><description>&lt;p>Search for it on the internet, and there&amp;rsquo;s no shortage of results that will tell you just how easy it is to create a website. You may feel like you don&amp;rsquo;t know enough about how websites work, but that&amp;rsquo;s okay. You can create a website without needing to know &lt;em>anything&lt;/em> about how a website works. Making a website today is easier than ever!&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Not Without Purpose</title><link>https://benhsz.github.io/</link><description>Recent content on Not Without Purpose</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><lastBuildDate>Tue, 16 Nov 2021 15:48:31 +0200</lastBuildDate><atom:link href="https://benhsz.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>My Answer to The Parenthesis Problem</title><link>https://benhsz.github.io/my-answer-to-the-parenthesis-problem/</link><pubDate>Tue, 16 Nov 2021 15:48:31 +0200</pubDate><guid>https://benhsz.github.io/my-answer-to-the-parenthesis-problem/</guid><description>&lt;p>As I wrote in the previous post, the solution to the problem is to have the editor visualize the code a certain way while having the programmer&amp;rsquo;s inputs, and the programming language syntax, remain the same.&lt;/p>
+&lt;p>The idea I present here takes advantage of the fact that there are temporary and interactive aspects to code. When code is not yet finished you might have opening parentheses that have no closing counterparts. Assuming the code is finished, and has the usual formatting, the editor would change the code&amp;rsquo;s appearance as follows.&lt;/p>
+&lt;pre>&lt;code>(define (factorial n)
+(if (zero? n)
+1
+(* n (factorial (sub1 n)))))
+🡫
+define (factorial n)
+if |zero? n
+1
+|* n (factorial (sub1 n)
+&lt;/code>&lt;/pre>
+&lt;p>If unfinished or incorrectly indented, the editor would make the code look a certain way. The &amp;lsquo;finished&amp;rsquo; look above builds on that. This makes many parentheses visually obsolete and lets the text&amp;rsquo;s formatting do the job. The unseen parentheses enable the editor to provide such visualizations.&lt;/p>
+&lt;h1 id="in-detail">In Detail&lt;/h1>
+&lt;p>What the finished look does specifically:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Remove the &amp;lsquo;outer&amp;rsquo; parentheses:&lt;/p>
+&lt;pre>&lt;code> (define X 5)
+(define Y 4)
+(define Z (+ 2 3))
+define X 5
+define Y 4
+define Z (+ 2 3)
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;li>
+&lt;p>Abstract pile-ups of closing parentheses occurring at the end of the line into one closing parenthesis:&lt;/p>
+&lt;pre>&lt;code> (add1 (add1 (add1 (add1 (add1 0)))))
+add1 (add1 (add1 (add1 (add1 0)
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;li>
+&lt;p>Make parentheses appear as bars if:&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;ol>
+&lt;li>
+&lt;p>They are part of a &amp;lsquo;list-like&amp;rsquo; format (for lack of a better term) and&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Their respective closing parenthesis is at the end of the same line:&lt;/p>
+&lt;pre>&lt;code>(if (zero? n)
+(add1 n)
+(sub1 n))
+if |zero? n
+|add1 n
+|sub1 n
+&lt;/code>&lt;/pre>
+&lt;/li>
+&lt;/ol>
+&lt;p>The unfinished look gives opening parentheses with no closing counterpart a different shape.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/lbp/add1.gif" alt="add1 gif">&lt;/p>
+&lt;p>The incorrect indentation look provides visual cues to point out any incorrect or atypical indentation.&lt;/p>
+&lt;pre>&lt;code> (define X 5)
+(define Y 4)
+(define Z (+ 2 3))
+define X 5
+→ define Y 4
+→ define Z (+ 2 3)
+&lt;/code>&lt;/pre>
+&lt;p>The availability of these visualizations makes the &lt;a href="https://benhsz.github.io/images/lbp/lbp.png">finished look&lt;/a> possible.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/lbp/factorial.gif" alt="factorial gif">&lt;/p>
+&lt;h1 id="questions">Questions&lt;/h1>
+&lt;p>&lt;strong>Implementation&amp;hellip;?&lt;/strong>&lt;br>
+I can&amp;rsquo;t say when I&amp;rsquo;ll get around to implementing what I&amp;rsquo;ve described, as I&amp;rsquo;m an inexperienced programmer. That said, anyone interested in implementing, copying or modifying this proposal is free to do so.&lt;/p>
+&lt;p>&lt;strong>How to edit such code?&lt;/strong>&lt;br>
+If you would previously edit some code by finding the appropriate closing parens in a massive pile-up of &lt;code>))))))&lt;/code>, where would you now place the cursor? This means the editing experience changes a bit. One possible solution is to have parentheses show up where you put the cursor, essentially toggling back to the text view for that particular line of code.&lt;/p>
+&lt;p>It&amp;rsquo;s likely that for users of editing tools like paredit, the editing experience would remain the same.&lt;/p>
+&lt;p>&lt;strong>What to call an implementation of this proposal?&lt;/strong>&lt;br>
+The project name for this idea was Lisp Beyond Parentheses, but I think an implementation should have a more descriptive name.
+I would consider calling it Adaptive Code Visualization.&lt;/p></description></item><item><title>The Parenthesis Problem</title><link>https://benhsz.github.io/the-parenthesis-problem/</link><pubDate>Tue, 16 Nov 2021 15:45:31 +0200</pubDate><guid>https://benhsz.github.io/the-parenthesis-problem/</guid><description>&lt;p>Lisp, referring to the category of programming languages, uses lists to do computer programming. In order for this to be useful, many lists are needed. And not just a succession of lists; items in a list can be another list, and &lt;em>that&lt;/em> list could contain another list.&lt;/p>
+&lt;p>Programming in Lisp, short for List Processing, means having many lists appear on the programmer&amp;rsquo;s screen. To know where lists begin and end, the notation for these lists involves parentheses. The result: parentheses absolutely &lt;em>everywhere&lt;/em>. This is problematic, because after a certain point it can become difficult to understand what&amp;rsquo;s going on.&lt;/p>
+&lt;p>Few programming languages in common use work like this. Commonly used programming languages, like Python, JavaScript, C, don&amp;rsquo;t use this kind of syntax. And so, they don&amp;rsquo;t have this kind of problem.&lt;/p>
+&lt;p>With this problem being unique to Lisp, why bother with Lisp? The answer is that having a programming language syntax work this way brings all sorts of unique advantages with it. Indeed, much has been written about &lt;!-- raw HTML omitted -->this. &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> &lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup> &lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup> &lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted -->&lt;br>
+This is why Lisp continues to see some use today in various forms, despite the parenthesis problem.&lt;/p>
+&lt;p>Attempts have been made to solve this problem by changing the syntax. But the syntax isn&amp;rsquo;t the problem. The problem concerns itself with having a certain kind of information (code), and the need to communicate the meaning of this information to the user. Rather than inundate the user with parentheses, something else should be shown. Something that&amp;rsquo;s easier to understand. The question is: what is that thing? What is the alternative view to this type of computer code?&lt;/p>
+&lt;h1 id="problem-solving">Problem-solving&lt;/h1>
+&lt;p>Computer programming is done on a computer, and editing programs are used for that purpose. These programs display the code that is being worked on.&lt;/p>
+&lt;p>Rather than change the code, the idea is to change how the code is displayed in the editor&amp;hellip;&lt;/p>
+&lt;p>Let&amp;rsquo;s make an attempt to solve this problem by experimenting on a sample of code.&lt;/p>
+&lt;pre>&lt;code>(define (factorial n)
+(if (zero? n)
+1
+(* n (factorial (sub1 n)))))
+&lt;/code>&lt;/pre>
+&lt;p>If the parentheses present such difficulty, why not just&amp;hellip; &lt;em>not&lt;/em> visualize them?&lt;/p>
+&lt;pre>&lt;code> define factorial n
+if zero? n
+1
+* n factorial sub1 n
+&lt;/code>&lt;/pre>
+&lt;p>Well. That was easy.&lt;/p>
+&lt;p>But wait. What if I forget to type the parentheses? What if I type a closing instead of opening parenthesis? That sort of thing would entirely change the meaning of the code, and I wouldn&amp;rsquo;t be able to tell the difference.&lt;/p>
+&lt;p>Let&amp;rsquo;s continue on a screenshot of code so we can tweak the image any way we want. Rather than replace parentheses with blank characters, how about we just reduce or minimize the shapes, by replacing them with, say, dots?&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/lbp/code-dots.png" alt="code image">&lt;/p>
+&lt;p>That&amp;rsquo;s better, but&amp;hellip; that still doesn&amp;rsquo;t solve the problem of not knowing when something starts or ends. We&amp;rsquo;re going to need symbols that are distinct.&lt;/p>
+&lt;p>So instead of dots, how about half circle shapes.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/lbp/code-halfcircles.png" alt="code image with half circles">&lt;/p>
+&lt;p>Now we&amp;rsquo;re getting somewhere.&lt;/p>
+&lt;p>This is an alternative, but we need to remember we&amp;rsquo;re not just looking for an alternative. We&amp;rsquo;re looking for something that&amp;rsquo;s strictly better than what we had before. Is this really better? Now that I look at this example a bit more, I&amp;rsquo;m noticing it&amp;rsquo;s a bit difficult to read. I can&amp;rsquo;t tell whether that half circle shape is opening or closing without examining it carefully. Maybe the shapes are just a bit too small.&lt;/p>
+&lt;p>So first we got rid of parentheses entirely, and while that seemed nice at first, all that did was turn the &amp;lsquo;too much information&amp;rsquo; problem into a &amp;lsquo;not enough information&amp;rsquo; problem. Changing them into dots nearly worked, but it became clear we needed something that would also tell us where something starts and ends. Taking that into account, the dots needed to be distinct, so we ended up with half circle shapes. While what we have now is promising, it&amp;rsquo;s not quite satisfactory because those half circle shapes are just a bit too small. It would seem the last step is to simply make them larger.&lt;/p>
+&lt;p>How about making them about the same size as the other characters?&lt;/p>
+&lt;p>If that&amp;rsquo;s the last problem we need to solve, the final result could be the alternative view to the code we&amp;rsquo;ve been looking fo&amp;ndash;&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/lbp/code-largecircles.png" alt="image with big half circles">&lt;/p>
+&lt;h1 id="fail">Fail&lt;/h1>
+&lt;p>&lt;strong>Wow&lt;/strong>. Okay, that did not work at all. All we ended up doing was recreate parentheses. An ugly, clumsy version of parentheses at that.&lt;/p>
+&lt;p>I don&amp;rsquo;t get it. I appreciate useful things. If visualizing parentheses is useful, why does the sight of them vex me so? Where is this feeling of dissatisfaction coming from?&lt;/p>
+&lt;p>Maybe that failed attempt just wasn&amp;rsquo;t radical enough. Rather than try to replace the parentheses with different characters, perhaps the answer is to render something &lt;em>completely&lt;/em> different. By drawing circles on the screen to represent lists, for example. Sure, you&amp;rsquo;d end up with lots of circles on the screen, and it would probably be way worse than parentheses, but it&amp;rsquo;s evidence an alternative view is possible. What other alternative views are there? Which can produce the desired result?&lt;/p>
+&lt;p>This reasoning may seem odd, but I happen to believe that the feeling of dissatisfaction is in fact evidence that the solution already exists. It just needs to be found.&lt;/p>
+&lt;h1 id="several-attempts-later">Several Attempts Later&amp;hellip;&lt;/h1>
+&lt;p>Submitted for your approval: My Answer to The Parenthesis Problem&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;em>Why Lisp?&lt;/em> &lt;a href="http://blog.rongarret.info/2015/05/why-lisp.html">http://blog.rongarret.info/2015/05/why-lisp.html&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>&lt;em>How Lisp Became God&amp;rsquo;s Own Programming Language&lt;/em>&lt;br>
+&lt;a href="https://twobithistory.org/2018/10/14/lisp.html">https://twobithistory.org/2018/10/14/lisp.html&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>&lt;em>An Intuition for Lisp Syntax&lt;/em> &lt;a href="https://stopa.io/post/265">https://stopa.io/post/265&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4" role="doc-endnote">
+&lt;p>I have my own idea of what I think the biggest advantage of Lisp is, which I may write about in the future.&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>Making a Website in 2021</title><link>https://benhsz.github.io/making-a-website-in-2021/</link><pubDate>Wed, 13 Oct 2021 17:41:10 +0200</pubDate><guid>https://benhsz.github.io/making-a-website-in-2021/</guid><description>&lt;p>Search for it on the internet, and there&amp;rsquo;s no shortage of results that will tell you just how easy it is to create a website. You may feel like you don&amp;rsquo;t know enough about how websites work, but that&amp;rsquo;s okay. You can create a website without needing to know &lt;em>anything&lt;/em> about how a website works. Making a website today is easier than ever!&lt;/p>
 &lt;p>The first thing I asked myself was what kind of a website I wanted to have. This was easy to answer. Some kind of blog, where I could just post my rambling thoughts. A blog like any other blog. A simple blog. Mostly text, with the occasional image sprinkled in.&lt;/p>
 &lt;p>Then I thought about where I could host this website. As a beginner programmer, I came upon &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>. On the GitHub Pages website, there&amp;rsquo;s a little introduction video that explains that creating a website can be a hassle, even for those with the know-how. But not to worry. With GitHub Pages, it&amp;rsquo;s a lot easier. Indeed, there are many services like GitHub Pages that offer a similar message. I even came upon a website that boasted you could get everything up and running in just 5 minutes.&lt;/p>
 &lt;p>After deciding to go with GitHub Pages, I had to choose a theme. This step would be easy, I thought. I was looking for something &lt;em>simple&lt;/em>. Something that focused on text. Something that people would find easy to read. Thus I began to try out some themes.&lt;/p>
