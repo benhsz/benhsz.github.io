@@ -1,6 +1,178 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Ben's Blog</title><link>https://benhsz.github.io/tags/</link><description>Recent content in Tags on Ben's Blog</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><atom:link href="https://benhsz.github.io/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Making a Website in 2021</title><link>https://benhsz.github.io/making-a-website-in-2021/</link><pubDate>Wed, 13 Oct 2021 17:41:10 +0200</pubDate><guid>https://benhsz.github.io/making-a-website-in-2021/</guid><description>Search for it on the internet, and there&amp;rsquo;s no shortage of results that will tell you just how easy it is to create a website. You may feel like you don&amp;rsquo;t know enough about how websites work, but that&amp;rsquo;s okay. You can create a website without needing to know anything about how a website works. Making a website today is easier than ever!
-The first thing I asked myself was what kind of a website I wanted to have.</description></item><item><title>The Struggle with Prefix Syntax</title><link>https://benhsz.github.io/the-struggle-with-prefix-syntax/</link><pubDate>Sun, 10 Oct 2021 22:34:39 +0200</pubDate><guid>https://benhsz.github.io/the-struggle-with-prefix-syntax/</guid><description>If you&amp;rsquo;re programming in a Lisp-family programming language, working with numbers is going to be a little bit different.
-Some might say that, while it may seem odd at first, you can get used to it.
-That is to say, it&amp;rsquo;s not bad. Just&amp;hellip; different.
-Prefix means that where you would normally have the operator between operands, you would have only one operator at the very beginning.
-In my experience, this is fine for when you need to add or multiply.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on Not Without Purpose</title><link>https://benhsz.github.io/tags/</link><description>Recent content in Tags on Not Without Purpose</description><generator>Hugo -- gohugo.io</generator><language>en-US</language><atom:link href="https://benhsz.github.io/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Making a Website in 2021</title><link>https://benhsz.github.io/making-a-website-in-2021/</link><pubDate>Wed, 13 Oct 2021 17:41:10 +0200</pubDate><guid>https://benhsz.github.io/making-a-website-in-2021/</guid><description>&lt;p>Search for it on the internet, and there&amp;rsquo;s no shortage of results that will tell you just how easy it is to create a website. You may feel like you don&amp;rsquo;t know enough about how websites work, but that&amp;rsquo;s okay. You can create a website without needing to know &lt;em>anything&lt;/em> about how a website works. Making a website today is easier than ever!&lt;/p>
+&lt;p>The first thing I asked myself was what kind of a website I wanted to have. This was easy to answer. Some kind of blog, where I could just post my rambling thoughts. A blog like any other blog. A simple blog. Mostly text, with the occasional image sprinkled in.&lt;/p>
+&lt;p>Then I thought about where I could host this website. As a beginner programmer, I came upon &lt;a href="https://pages.github.com/">GitHub Pages&lt;/a>. On the GitHub Pages website, there&amp;rsquo;s a little introduction video that explains that creating a website can be a hassle, even for those with the know-how. But not to worry. With GitHub Pages, it&amp;rsquo;s a lot easier. Indeed, there are many services like GitHub Pages that offer a similar message. I even came upon a website that boasted you could get everything up and running in just 5 minutes.&lt;/p>
+&lt;p>After deciding to go with GitHub Pages, I had to choose a theme. This step would be easy, I thought. I was looking for something &lt;em>simple&lt;/em>. Something that focused on text. Something that people would find easy to read. Thus I began to try out some themes.&lt;/p>
+&lt;p>It didn&amp;rsquo;t take long for the dissatisfaction to set in with the themes I had available to me. Actually selecting a theme was effortless; all you had to do was navigate to the appropriately-named Theme Chooser and, just, like, pick a theme, yo. But strangely, I found that none of the available themes were particularly good. Even the one literally named &amp;lsquo;minimalist&amp;rsquo;.&lt;/p>
+&lt;h1 id="keep-it-simple">Keep It Simple&lt;/h1>
+&lt;p>At this point, I began to consider an alternative. I recall visiting some website that was like a blog, but it didn&amp;rsquo;t seem to have a design. It had an old-fashioned look, like it was made in another, previous age of the internet. The font would default to Times New Roman (on Windows), and text would render as wide as the browser window was wide. I thought: maybe I should forget all this theme nonsense and go down that road.&lt;/p>
+&lt;p>But I decided against it. In this day and age, people have certain expectations of a website, and it&amp;rsquo;s better to just meet to those expectations. Further, as I had desktop viewers in mind, &lt;!-- raw HTML omitted -->text rendering as wide as the browser window&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup> was a big no-no for me.&lt;!-- raw HTML omitted --> Perhaps in the past, when desktop computers had small 14 inch screens, this was acceptable. In this age of large wide-screen and ultra-wide-screen monitors though, it would be too annoying to deal with. Better it is to just keep searching for the right theme, I decided.&lt;/p>
+&lt;p>The GitHub Pages documentation explained that you can choose from more themes if you installed Jekyll. I may have read some blogs where it said it was made with Jekyll. What &lt;em>is&lt;/em> Jekyll? A static site generator, you say?&lt;/p>
+&lt;p>And down that rabbit hole I went. But before I installed Jekyll, I was curious to see some previews of those &amp;lsquo;more themes&amp;rsquo; that GitHub Pages did not offer out of the box.&lt;/p>
+&lt;h1 id="any-theme-you-like">Any Theme You Like&lt;/h1>
+&lt;p>While searching for Jekyll themes, I became more curious about other static site generators. &lt;!-- raw HTML omitted -->How many of these static site generators are there?&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted --> How do they work? What, exactly, do they do? Is Jekyll &amp;lsquo;the best one&amp;rsquo;? Are static site generators necessary if you just want a simple blog?&lt;/p>
+&lt;p>As I continued to browse for themes, I again became dissatisifed. There was no shortage of &amp;lsquo;snazzy&amp;rsquo; themes, but what about simple themes? Unimpressed, and increasingly curious, I began to take a peek at themes for other SSG&amp;rsquo;s, such as Hugo and Zola.&lt;/p>
+&lt;p>While browsing Hugo themes, I found myself enjoying it more than when I looked at Jekyll themes. Everything just looked nicer. Looking back at it now, I wonder why that is. Hugo is newer than Jekyll. Perhaps themes are just a bit more modern-looking as a result. I&amp;rsquo;m not entirely sure what the reason is. In any case, I eventually found a theme I liked.&lt;/p>
+&lt;p>Then I began second-guessing. Is this really what I want? Maybe I should keep looking. As someone with more self-awareness than what&amp;rsquo;s good for me, I was acutely aware of just &lt;em>how much time&lt;/em> I was wasting looking for a theme.&lt;/p>
+&lt;p>I began to ask myself: how many hours over the course of several days have I wasted already? What the heck is going on here? Just pick a theme, dumbass! It doesn&amp;rsquo;t matter! Focus on starting the blog. You can always change the theme later.&lt;/p>
+&lt;p>That&amp;rsquo;s right. I can always change the theme later. Knowing that, why is it still so hard to choose something?&lt;/p>
+&lt;p>If I had to buy new furniture, I would have a hard time choosing, because once I&amp;rsquo;ve had something delivered, I can&amp;rsquo;t just snap my fingers and change it to something else. And furniture ain&amp;rsquo;t free. Having difficulty deciding in that case would make sense.&lt;/p>
+&lt;p>So why would choosing a theme be this difficult? I already knew that when confronted with lots of choice, people act weird. But I haven&amp;rsquo;t studied this &lt;!-- raw HTML omitted -->issue&lt;sup id="fnref:3">&lt;a href="#fn:3" class="footnote-ref" role="doc-noteref">3&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted --> carefully.&lt;/p>
+&lt;h1 id="hold-the-serifs-please">Hold the Serifs, Please&lt;/h1>
+&lt;p>Having browsed a multitude of themes, it slowly became clear what I was looking for. Single-column, sans serif, dark text on &lt;!-- raw HTML omitted -->a white background.&lt;sup id="fnref:4">&lt;a href="#fn:4" class="footnote-ref" role="doc-noteref">4&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted --> The font choice especially seemed to have the largest effect on the overall look of the site. That makes sense, given that what I was interested in dealt with text, not photographs or videos.&lt;/p>
+&lt;p>The difference between a serif and sans serif font is interesting. My own understanding&amp;ndash;having no education in typography or what have you&amp;ndash;is that serif fonts are just more intricate looking, and have a certain feel that suits story-telling. Sans serif is for stuff that&amp;rsquo;s more to the point.&lt;/p>
+&lt;p>On one hand, I was interested in telling stories. But I also wanted to just get to the point. I guess the story-telling I wanted to do, was more like giving explanations, rather than a &lt;em>Once upon a time&amp;hellip;&lt;/em> sort of thing.&lt;br>
+I decided to restrict my search for themes with sans serif fonts.&lt;/p>
+&lt;p>(It&amp;rsquo;s technically possible to customize a theme&amp;rsquo;s font settings. Having already spent hours searching for a theme, I feared I would spend even longer customizing a theme to my liking, and quickly decided against it.)&lt;/p>
+&lt;p>Unfortunately, the websites on which I browsed for themes didn&amp;rsquo;t seem to have any options that let you search for something based on fonts, or layout even. I could only find a highly general search setting, such as &amp;lsquo;Blog&amp;rsquo; or &amp;lsquo;Minimalist&amp;rsquo;. It seems WordPress does let you search for layout, but also has no serifs/sans serifs option.&lt;/p>
+&lt;p>So I decided to first focus on one-column layouts, which I could browse for by just paying attention to the thumbnail images, then manually filter out the ones with serif fonts from my list.&lt;/p>
+&lt;p>More time passed. And, at long last, &lt;!-- raw HTML omitted -->I managed to settle on a theme.&lt;sup id="fnref:5">&lt;a href="#fn:5" class="footnote-ref" role="doc-noteref">5&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted --> Somehow.&lt;/p>
+&lt;h1 id="lift-off">Lift-off&lt;/h1>
+&lt;p>Now that we&amp;rsquo;re up in the air, you might ask: were the claims true, that making a website today is easier than ever?&lt;/p>
+&lt;p>In order to use Hugo instead of Jekyll with GitHub Pages, a bit more configuration than usual was needed. In the last few steps I undertook, my mind yet reeled from having dealt with such an endless sea of choice.&lt;br>
+The dissatisfaction. The second-guessing. The agonizing. How I endlessly, endlessly browsed for themes!&lt;/p>
+&lt;p>Fortunately, a quick search on the internet told me all the configuration I needed to know. Why, it would take no more than a few minutes.&lt;br>
+So, to answer the question: was it easy?&lt;/p>
+&lt;p>Yes. I suppose it was.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>Firefox has a feature called &lt;a href="https://support.mozilla.org/en-US/kb/firefox-reader-view-clutter-free-web-pages">Reader View&lt;/a> that could come in handy in such situations, but I always forget to use it whenever I come across a webpage where it could be useful.&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:2" role="doc-endnote">
+&lt;p>&lt;a href="https://jamstack.org/generators/">A surprising amount.&lt;/a>&amp;#160;&lt;a href="#fnref:2" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:3" role="doc-endnote">
+&lt;p>&lt;a href="https://en.wikipedia.org/wiki/The_Paradox_of_Choice">https://en.wikipedia.org/wiki/The_Paradox_of_Choice&lt;/a>&amp;#160;&lt;a href="#fnref:3" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:4" role="doc-endnote">
+&lt;p>There are themes that default to a certain background but can take user preferences into account, should a user preference be detected. &lt;a href="https://github.com/LukasJoswiak/etch">What I&amp;rsquo;m using&lt;/a> at the time of writing is such a theme.&amp;#160;&lt;a href="#fnref:4" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;li id="fn:5" role="doc-endnote">
+&lt;p>I like it well enough. The links are my favorite part. There&amp;rsquo;s just nothing that says &amp;lsquo;hyperlink&amp;rsquo; quite like beautiful bright blue text. It seems in the end I did go for something old-fashioned after all.&amp;#160;&lt;a href="#fnref:5" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item><item><title>The Struggle with Prefix Syntax</title><link>https://benhsz.github.io/the-struggle-with-prefix-syntax/</link><pubDate>Sun, 10 Oct 2021 22:34:39 +0200</pubDate><guid>https://benhsz.github.io/the-struggle-with-prefix-syntax/</guid><description>&lt;p>If you&amp;rsquo;re programming in a Lisp-family programming language, working with
+numbers is going to be a little bit different.&lt;/p>
+&lt;p>Some might say that, while it may seem odd at first, you can get used to it.&lt;br>
+That is to say, it&amp;rsquo;s not bad. Just&amp;hellip; different.&lt;/p>
+&lt;p>Prefix means that where you would normally have the operator between operands,
+you would have only one operator at the very beginning.&lt;/p>
+&lt;p>In my experience, this is fine for when you need to add or multiply. For some reason that isn&amp;rsquo;t
+confusing at all; it really is just nothing more than &lt;em>different.&lt;/em>&lt;/p>
+&lt;p>But for other things like greater-than, less-than, minus, it&amp;rsquo;s not so simple.
+When I started out programming in Lisp, I thought prefix syntax seemed to present only a minor difficulty. But now that some time has passed, I&amp;rsquo;ve given some thought to my experience with it.&lt;/p>
+&lt;p>And it&amp;rsquo;s actually mind-boggling how confusing it is.&lt;/p>
+&lt;p>For example.&lt;/p>
+&lt;p>&lt;code>(- 3 2)&lt;/code>&lt;/p>
+&lt;p>I would read this as &amp;ldquo;minus three two&amp;rdquo;.&lt;/p>
+&lt;p>Hang on. Let me try to read that again.&lt;/p>
+&lt;p>&lt;code>(- 3 2)&lt;/code>&lt;/p>
+&lt;p>Minus&amp;hellip; three&amp;hellip; two.&lt;/p>
+&lt;p>But wait. &lt;em>What&lt;/em> minus three? And then there&amp;rsquo;s that two&amp;hellip;&lt;/p>
+&lt;p>So is it two minus three?&lt;/p>
+&lt;p>Nope.&lt;/p>
+&lt;h3 id="minus-three-two--three-minus-two">Minus Three Two = Three Minus Two&lt;/h3>
+&lt;p>&lt;img src="https://i.imgur.com/zeJrmc8.gif" alt="Huh gif">&lt;/p>
+&lt;p>I now realize it&amp;rsquo;s almost impossible to get used to because, when reading the code from left to right (as code is usually read) it
+partially reads like infix notation. So it&amp;rsquo;s not that it&amp;rsquo;s different. It&amp;rsquo;s that it&amp;rsquo;s not different &lt;em>enough&lt;/em>.&lt;/p>
+&lt;p>There is a way to avoid the confusion though. But we need to read it step-by-step.
+First the operator, then the operands:&lt;/p>
+&lt;p>&lt;code>-&lt;/code>&lt;/p>
+&lt;p>&amp;ldquo;Minus.&amp;rdquo; (Hyphen, actually. But we&amp;rsquo;re just gonna have to roll with it.)&lt;/p>
+&lt;p>This means we&amp;rsquo;re dealing with subtraction, so let&amp;rsquo;s see what comes after that.&lt;/p>
+&lt;p>&lt;code>3 2&lt;/code>&lt;/p>
+&lt;p>&amp;ldquo;Three two.&amp;rdquo;&lt;/p>
+&lt;p>Now imagine the operator between the numbers.&lt;/p>
+&lt;p>&amp;ldquo;Three minus two.&amp;rdquo;&lt;/p>
+&lt;p>There we go.&lt;/p>
+&lt;p>And if you have more numbers, like&lt;/p>
+&lt;p>&lt;code>(- 9 3 2)&lt;/code>&lt;/p>
+&lt;p>It should be read as &amp;ldquo;minus&amp;rdquo;&amp;hellip; &amp;ldquo;nine minus three minus two.&amp;rdquo;&lt;/p>
+&lt;p>And you do this with other operators too, like&lt;/p>
+&lt;p>&lt;code>(&amp;gt; X Y)&lt;/code>&lt;/p>
+&lt;p>This should not be read as &amp;ldquo;greater than X Y&amp;rdquo;, which can leave you wondering: &lt;em>what&lt;/em> is greater than X? And what&amp;rsquo;s
+that Y doing there?! Is Y greater than X?&lt;br>
+No, no, no.&lt;/p>
+&lt;p>Don&amp;rsquo;t read it left to right in one go! Oh, sure, you can read all other code left to right in one go, but not this part.&lt;/p>
+&lt;p>Just repeat the previous steps. &amp;ldquo;Greater than&amp;rdquo;, take a look what you&amp;rsquo;ve got (X Y), and then&amp;hellip; &amp;ldquo;X greater than Y.&amp;rdquo;&lt;/p>
+&lt;p>See? That wasn&amp;rsquo;t so bad.&lt;/p>
+&lt;p>Well, actually, that was pretty bad.
+It may not seem like too much ask here, but that&amp;rsquo;s because we&amp;rsquo;re forgetting the context.
+A thing such as &lt;code>(&amp;gt; X Y)&lt;/code> is problematic when it is involved in a train of thought. That is, when you&amp;rsquo;re busy thinking about code.
+And that&amp;rsquo;s practically always going to be the case.&lt;/p>
+&lt;blockquote>
+&lt;p>Let&amp;rsquo;s see here. If X is greater than Y, then&amp;hellip;&lt;/p>
+&lt;/blockquote>
+&lt;p>&lt;code>(&amp;gt; X Y)&lt;/code>&lt;/p>
+&lt;blockquote>
+&lt;p>Wait&amp;hellip; greater than&amp;hellip;&lt;/p>
+&lt;p>Yeah. Okay. So&amp;hellip;&lt;/p>
+&lt;p>No, hang on. Greater than&amp;hellip; X? Y. Wait, what?&lt;/p>
+&lt;/blockquote>
+&lt;p>Train of thought: derailed.&lt;/p>
+&lt;p>I know how prefix syntax is supposed to work at this point, so it&amp;rsquo;s not difficult to start typing &lt;code>(&amp;gt; X Y)&lt;/code>. But there is that small moment of second-guessing that happens when confronted with the sight of &lt;code>&amp;gt; X Y&lt;/code>, and that moment is
+enough to screw me over.&lt;/p>
+&lt;p>There&amp;rsquo;s no getting used to it. Instead, you just get used to having your train of thought messed up once in a while; or catch a lucky break when you only have to add or multiply.&lt;/p>
+&lt;p>There might be a way to solve this problem though.&lt;/p>
+&lt;h1 id="infix-readings">Infix Readings&lt;/h1>
+&lt;p>The idea I propose here doesn&amp;rsquo;t involve changing the notation, but rather involves the editor, and
+what it can do to make prefix syntax easier to read.&lt;/p>
+&lt;p>Before I explain further, have a gander at these examples.&lt;/p>
+&lt;p>If you read this
+&lt;code>- 3 2&lt;/code>
+as &amp;ldquo;minus three two.&amp;rdquo;&lt;/p>
+&lt;p>Then the following would be read as &lt;code> -3 2&lt;/code> &amp;ldquo;minus three, two.&amp;rdquo;&lt;/p>
+&lt;p>And &lt;code>-3 -2&lt;/code> as &amp;ldquo;minus three, minus two.&amp;rdquo;&lt;/p>
+&lt;p>And &lt;code>- 3 - 2&lt;/code> as &amp;ldquo;minus three minus two.&amp;rdquo;&lt;/p>
+&lt;p>Then, perhaps, the following could be read as&amp;hellip;?&lt;/p>
+&lt;p>&lt;code>- ... 3 - 2&lt;/code>&lt;/p>
+&lt;p>&amp;ldquo;Minus, three minus two.&amp;rdquo;&lt;/p>
+&lt;p>&lt;!-- raw HTML omitted -->&lt;em>Bringo.&lt;/em>&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted -->&lt;/p>
+&lt;p>Here&amp;rsquo;s what I propose the editor should do:&lt;/p>
+&lt;ol>
+&lt;li>Visually separate the first operator from the rest&lt;/li>
+&lt;li>Create more space between the operands by doing a bit of padding&lt;/li>
+&lt;li>Fill the newly created space between the operands with the appropriate symbol&amp;ndash;a ligature&lt;/li>
+&lt;/ol>
+&lt;p>We could call this functionality &amp;lsquo;Infix Readings&amp;rsquo;, although I&amp;rsquo;m not sure yet if that&amp;rsquo;s the right term for it.&lt;/p>
+&lt;p>Rather than pad the space between the operator and the first operand as above, a similar effect can be achieved by displaying some sort of barrier around the first operator, thereby &amp;lsquo;detaching&amp;rsquo; it from the operands, and having a ligature appear connected to the operands by being visually closer to the operands than the first operator.&lt;/p>
+&lt;p>That sounds a bit complicated. But no worries, I made mockups in the form of animated GIFs, showing what it would look like.&lt;/p>
+&lt;h1 id="mockups">Mockups&lt;/h1>
+&lt;p>Here&amp;rsquo;s a GIF showing (- 3 2).&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/3-2.gif" alt="- 3 2 gif">&lt;/p>
+&lt;p>Of course, if there&amp;rsquo;s more operands, the editor will continue to fill the gaps with the appropriate symbol.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/9-3-2.gif" alt="- 9 3 2 gif">&lt;/p>
+&lt;p>The programmer doesn&amp;rsquo;t input those extra minuses you see in the above GIF. That&amp;rsquo;s the editor&amp;rsquo;s doing. They show up as soon as the programmer enters a space character.&lt;/p>
+&lt;p>So rather than go out of your way to imagine the appropriate operator between the operands,
+the editor will just, like, &lt;em>do it for you.&lt;/em>&lt;/p>
+&lt;p>And while we&amp;rsquo;re using ligatures: another thing that has bothered me is the greater-than-or-equal-to operator &lt;code>&amp;gt;=&lt;/code> which looks a bit incomprehensible to me.
+We can use something that looks a bit nicer instead.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/6-4-7.gif" alt="Greater-than-or-equal-to gif">&lt;/p>
+&lt;p>Prefix syntax never gave me trouble when adding or multiplying, but here&amp;rsquo;s what that would look like:&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/plusmultiply.gif" alt="Plus and multiply gif">&lt;/p>
+&lt;p>I suppose you could provide options in the editor as to which operators infix readings should act upon.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/nested.gif" alt="Nested expressions gif">&lt;/p>
+&lt;p>Selecting the expressions would show that those extra operators aren&amp;rsquo;t actually &amp;lsquo;there&amp;rsquo;, i.e. not entered by the programmer&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/selection.gif" alt="Selection gif">&lt;/p>
+&lt;p>Here&amp;rsquo;s what it would look like if you toggled infix readings on and off. The programmer never inputs extra space
+between the operands; the editor just makes it seem that way.&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/toggle.gif" alt="Toggle gif">&lt;/p>
+&lt;p>Thus everything stays compatible with existing code.&lt;br>
+(And also, when working with others who may not use infix readings, to prevent any
+confusion as to why the heck you keep putting two spaces in expressions when there should be only one!)&lt;/p>
+&lt;p>Of course, we need to remember to do this in context, as before.
+That means we need to pretend like we&amp;rsquo;re busy coding.&lt;/p>
+&lt;p>So let&amp;rsquo;s see, if X is greater than Y, then&amp;hellip;&lt;/p>
+&lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/ifthen.gif" alt="If then gif">&lt;/p>
+&lt;p>Hopefully that would help us stay on track.&lt;/p>
+&lt;p>P.S. At time of writing, work has not begun to implement this feature.&lt;/p>
+&lt;p>Anyone interested in implementing, copying, or modifying this proposal is free to do so.&lt;/p>
+&lt;section class="footnotes" role="doc-endnotes">
+&lt;hr>
+&lt;ol>
+&lt;li id="fn:1" role="doc-endnote">
+&lt;p>&lt;a href="https://www.youtube.com/watch?v=4MpyHBoiTwk">https://www.youtube.com/watch?v=4MpyHBoiTwk&lt;/a>&amp;#160;&lt;a href="#fnref:1" class="footnote-backref" role="doc-backlink">&amp;#x21a9;&amp;#xfe0e;&lt;/a>&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;/section></description></item></channel></rss>
