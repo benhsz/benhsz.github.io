@@ -52,7 +52,7 @@ add1 (add1 (add1 (add1 (add1 0)
 &lt;/ul>
 &lt;ol>
 &lt;li>
-&lt;p>They are part of a &amp;lsquo;list-like&amp;rsquo; format (for lack of a better term) and&lt;/p>
+&lt;p>They are part of a &amp;rsquo;list-like&amp;rsquo; format (for lack of a better term) and&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>Their respective closing parenthesis is at the end of the same line:&lt;/p>
@@ -116,7 +116,7 @@ if zero? n
 &lt;p>&lt;img src="https://benhsz.github.io/images/lbp/code-halfcircles.png" alt="code image with half circles">&lt;/p>
 &lt;p>Now we&amp;rsquo;re getting somewhere.&lt;/p>
 &lt;p>This is an alternative, but we need to remember we&amp;rsquo;re not just looking for an alternative. We&amp;rsquo;re looking for something that&amp;rsquo;s strictly better than what we had before. Is this really better? Now that I look at this example a bit more, I&amp;rsquo;m noticing it&amp;rsquo;s a bit difficult to read. I can&amp;rsquo;t tell whether that half circle shape is opening or closing without examining it carefully. Maybe the shapes are just a bit too small.&lt;/p>
-&lt;p>So first we got rid of parentheses entirely, and while that seemed nice at first, all that did was turn the &amp;lsquo;too much information&amp;rsquo; problem into a &amp;lsquo;not enough information&amp;rsquo; problem. Changing them into dots nearly worked, but it became clear we needed something that would also tell us where something starts and ends. Taking that into account, the dots needed to be distinct, so we ended up with half circle shapes. While what we have now is promising, it&amp;rsquo;s not quite satisfactory because those half circle shapes are just a bit too small. It would seem the last step is to simply make them larger.&lt;/p>
+&lt;p>So first we got rid of parentheses entirely, and while that seemed nice at first, all that did was turn the &amp;rsquo;too much information&amp;rsquo; problem into a &amp;rsquo;not enough information&amp;rsquo; problem. Changing them into dots nearly worked, but it became clear we needed something that would also tell us where something starts and ends. Taking that into account, the dots needed to be distinct, so we ended up with half circle shapes. While what we have now is promising, it&amp;rsquo;s not quite satisfactory because those half circle shapes are just a bit too small. It would seem the last step is to simply make them larger.&lt;/p>
 &lt;p>How about making them about the same size as the other characters?&lt;/p>
 &lt;p>If that&amp;rsquo;s the last problem we need to solve, the final result could be the alternative view to the code we&amp;rsquo;ve been looking fo&amp;ndash;&lt;/p>
 &lt;p>&lt;img src="https://benhsz.github.io/images/lbp/code-largecircles.png" alt="image with big half circles">&lt;/p>
@@ -155,7 +155,7 @@ if zero? n
 &lt;p>The GitHub Pages documentation explained that you can choose from more themes if you installed Jekyll. I may have read some blogs where it said it was made with Jekyll. What &lt;em>is&lt;/em> Jekyll? A static site generator, you say?&lt;/p>
 &lt;p>And down that rabbit hole I went. But before I installed Jekyll, I was curious to see some previews of those &amp;lsquo;more themes&amp;rsquo; that GitHub Pages did not offer out of the box.&lt;/p>
 &lt;h1 id="any-theme-you-like">Any Theme You Like&lt;/h1>
-&lt;p>While searching for Jekyll themes, I became more curious about other static site generators. &lt;!-- raw HTML omitted -->How many of these static site generators are there?&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted --> How do they work? What, exactly, do they do? Is Jekyll &amp;lsquo;the best one&amp;rsquo;? Are static site generators necessary if you just want a simple blog?&lt;/p>
+&lt;p>While searching for Jekyll themes, I became more curious about other static site generators. &lt;!-- raw HTML omitted -->How many of these static site generators are there?&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>&lt;!-- raw HTML omitted --> How do they work? What, exactly, do they do? Is Jekyll &amp;rsquo;the best one&amp;rsquo;? Are static site generators necessary if you just want a simple blog?&lt;/p>
 &lt;p>As I continued to browse for themes, I again became dissatisifed. There was no shortage of &amp;lsquo;snazzy&amp;rsquo; themes, but what about simple themes? Unimpressed, and increasingly curious, I began to take a peek at themes for other SSG&amp;rsquo;s, such as Hugo and Zola.&lt;/p>
 &lt;p>While browsing Hugo themes, I found myself enjoying it more than when I looked at Jekyll themes. Everything just looked nicer. Looking back at it now, I wonder why that is. Hugo is newer than Jekyll. Perhaps themes are just a bit more modern-looking as a result. I&amp;rsquo;m not entirely sure what the reason is. In any case, I eventually found a theme I liked.&lt;/p>
 &lt;p>Then I began second-guessing. Is this really what I want? Maybe I should keep looking. As someone with more self-awareness than what&amp;rsquo;s good for me, I was acutely aware of just &lt;em>how much time&lt;/em> I was wasting looking for a theme.&lt;/p>
@@ -299,7 +299,7 @@ We can use something that looks a bit nicer instead.&lt;/p>
 &lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/plusmultiply.gif" alt="Plus and multiply gif">&lt;/p>
 &lt;p>I suppose you could provide options in the editor as to which operators infix readings should act upon.&lt;/p>
 &lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/nested.gif" alt="Nested expressions gif">&lt;/p>
-&lt;p>Selecting the expressions would show that those extra operators aren&amp;rsquo;t actually &amp;lsquo;there&amp;rsquo;, i.e. not entered by the programmer&lt;/p>
+&lt;p>Selecting the expressions would show that those extra operators aren&amp;rsquo;t actually &amp;rsquo;there&amp;rsquo;, i.e. not entered by the programmer&lt;/p>
 &lt;p>&lt;img src="https://benhsz.github.io/images/irgifs/selection.gif" alt="Selection gif">&lt;/p>
 &lt;p>Here&amp;rsquo;s what it would look like if you toggled infix readings on and off. The programmer never inputs extra space
 between the operands; the editor just makes it seem that way.&lt;/p>

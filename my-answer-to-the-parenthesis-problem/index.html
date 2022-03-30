@@ -1,33 +1,4 @@
-<!doctype html><html><head>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="A blogging website.">
-<link rel="shortcut icon" href=https://benhsz.github.io/favicon.ico>
-<link rel=stylesheet href=/css/style.min.css>
-<title>My Answer to The Parenthesis Problem</title>
-</head>
-<body><header id=banner>
-<h2><a href=https://benhsz.github.io>Not Without Purpose</a></h2>
-<nav>
-<ul>
-<li>
-<a href=/posts title=posts>posts</a>
-</li><li>
-<a href=/about title=about>about</a>
-</li>
-</ul>
-</nav>
-</header>
-<main id=content>
-<article>
-<header id=post-header>
-<h1>My Answer to The Parenthesis Problem</h1>
-<div>
-<time>November 16, 2021</time>
-</div>
-</header><p>As I wrote in the <a href=/the-parenthesis-problem>previous post</a>, the solution to the problem is to have the editor visualize the code a certain way while having the programmer&rsquo;s inputs, and the programming language syntax, remain the same.</p>
-<p>The idea I present here takes advantage of the fact that there are temporary and interactive aspects to code. When code is not yet finished you might have opening parentheses that have no closing counterparts. Assuming the code is finished, and has the usual formatting, the editor would change the code&rsquo;s appearance as follows.</p>
-<pre><code>(define (factorial n)
+<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="A blogging website."><link rel="shortcut icon" href=https://benhsz.github.io/favicon.ico><link rel=stylesheet href=/css/style.min.css><title>My Answer to The Parenthesis Problem</title></head><body><header id=banner><h2><a href=https://benhsz.github.io>Not Without Purpose</a></h2><nav><ul><li><a href=/posts title=posts>posts</a></li><li><a href=/about title=about>about</a></li></ul></nav></header><main id=content><article><header id=post-header><h1>My Answer to The Parenthesis Problem</h1><div><time>November 16, 2021</time></div></header><p>As I wrote in the <a href=/the-parenthesis-problem>previous post</a>, the solution to the problem is to have the editor visualize the code a certain way while having the programmer&rsquo;s inputs, and the programming language syntax, remain the same.</p><p>The idea I present here takes advantage of the fact that there are temporary and interactive aspects to code. When code is not yet finished you might have opening parentheses that have no closing counterparts. Assuming the code is finished, and has the usual formatting, the editor would change the code&rsquo;s appearance as follows.</p><pre><code>(define (factorial n)
   (if (zero? n)
       1
       (* n (factorial (sub1 n)))))
@@ -38,74 +9,29 @@
    if |zero? n					   
       1
       |* n (factorial (sub1 n)
-</code></pre>
-<p>If unfinished or incorrectly indented, the editor would make the code look a certain way. The &lsquo;finished&rsquo; look above builds on that. This makes many parentheses visually obsolete and lets the text&rsquo;s formatting do the job. The unseen parentheses enable the editor to provide such visualizations.</p>
-<h1 id=in-detail>In Detail</h1>
-<p>What the finished look does specifically:</p>
-<ul>
-<li>
-<p>Remove the &lsquo;outer&rsquo; parentheses:</p>
-<pre><code>  (define X 5)
+</code></pre><p>If unfinished or incorrectly indented, the editor would make the code look a certain way. The &lsquo;finished&rsquo; look above builds on that. This makes many parentheses visually obsolete and lets the text&rsquo;s formatting do the job. The unseen parentheses enable the editor to provide such visualizations.</p><h1 id=in-detail>In Detail</h1><p>What the finished look does specifically:</p><ul><li><p>Remove the &lsquo;outer&rsquo; parentheses:</p><pre><code>  (define X 5)
   (define Y 4)
   (define Z (+ 2 3))
 
    define X 5
    define Y 4
    define Z (+ 2 3)
-</code></pre>
-</li>
-<li>
-<p>Abstract pile-ups of closing parentheses occurring at the end of the line into one closing parenthesis:</p>
-<pre><code>  (add1 (add1 (add1 (add1 (add1 0)))))
+</code></pre></li><li><p>Abstract pile-ups of closing parentheses occurring at the end of the line into one closing parenthesis:</p><pre><code>  (add1 (add1 (add1 (add1 (add1 0)))))
 
    add1 (add1 (add1 (add1 (add1 0)
-</code></pre>
-</li>
-<li>
-<p>Make parentheses appear as bars if:</p>
-</li>
-</ul>
-<ol>
-<li>
-<p>They are part of a &lsquo;list-like&rsquo; format (for lack of a better term) and</p>
-</li>
-<li>
-<p>Their respective closing parenthesis is at the end of the same line:</p>
-<pre><code>(if (zero? n)
+</code></pre></li><li><p>Make parentheses appear as bars if:</p></li></ul><ol><li><p>They are part of a &rsquo;list-like&rsquo; format (for lack of a better term) and</p></li><li><p>Their respective closing parenthesis is at the end of the same line:</p><pre><code>(if (zero? n)
     (add1 n)
     (sub1 n))
 
  if |zero? n
     |add1 n
     |sub1 n
-</code></pre>
-</li>
-</ol>
-<p>The unfinished look gives opening parentheses with no closing counterpart a different shape.</p>
-<p><img src=/images/lbp/add1.gif alt="add1 gif"></p>
-<p>The incorrect indentation look provides visual cues to point out any incorrect or atypical indentation.</p>
-<pre><code>    (define X 5)
+</code></pre></li></ol><p>The unfinished look gives opening parentheses with no closing counterpart a different shape.</p><p><img src=/images/lbp/add1.gif alt="add1 gif"></p><p>The incorrect indentation look provides visual cues to point out any incorrect or atypical indentation.</p><pre><code>    (define X 5)
       (define Y 4)
       (define Z (+ 2 3))
 
      define X 5
     →  define Y 4
     →  define Z (+ 2 3)
-</code></pre>
-<p>The availability of these visualizations makes the <a href=/images/lbp/lbp.png>finished look</a> possible.</p>
-<p><img src=/images/lbp/factorial.gif alt="factorial gif"></p>
-<h1 id=questions>Questions</h1>
-<p><strong>Implementation&mldr;?</strong><br>
-I can&rsquo;t say when I&rsquo;ll get around to implementing what I&rsquo;ve described, as I&rsquo;m an inexperienced programmer. That said, anyone interested in implementing, copying or modifying this proposal is free to do so.</p>
-<p><strong>How to edit such code?</strong><br>
-If you would previously edit some code by finding the appropriate closing parens in a massive pile-up of <code>))))))</code>, where would you now place the cursor? This means the editing experience changes a bit. One possible solution is to have parentheses show up where you put the cursor, essentially toggling back to the text view for that particular line of code.</p>
-<p>It&rsquo;s likely that for users of editing tools like paredit, the editing experience would remain the same.</p>
-<p><strong>What to call an implementation of this proposal?</strong><br>
-The project name for this idea was Lisp Beyond Parentheses, but I think an implementation should have a more descriptive name.
-I would consider calling it Adaptive Code Visualization.</p>
-</article>
-</main><footer id=footer>
-Copyright © 2022 Ben Hosseinzahi
-</footer>
-</body>
-</html>
+</code></pre><p>The availability of these visualizations makes the <a href=/images/lbp/lbp.png>finished look</a> possible.</p><p><img src=/images/lbp/factorial.gif alt="factorial gif"></p><h1 id=questions>Questions</h1><p><strong>Implementation&mldr;?</strong><br>I can&rsquo;t say when I&rsquo;ll get around to implementing what I&rsquo;ve described, as I&rsquo;m an inexperienced programmer. That said, anyone interested in implementing, copying or modifying this proposal is free to do so.</p><p><strong>How to edit such code?</strong><br>If you would previously edit some code by finding the appropriate closing parens in a massive pile-up of <code>))))))</code>, where would you now place the cursor? This means the editing experience changes a bit. One possible solution is to have parentheses show up where you put the cursor, essentially toggling back to the text view for that particular line of code.</p><p>It&rsquo;s likely that for users of editing tools like paredit, the editing experience would remain the same.</p><p><strong>What to call an implementation of this proposal?</strong><br>The project name for this idea was Lisp Beyond Parentheses, but I think an implementation should have a more descriptive name.
+I would consider calling it Adaptive Code Visualization.</p></article></main><footer id=footer>Copyright © 2022 Ben Hosseinzahi</footer></body></html>
